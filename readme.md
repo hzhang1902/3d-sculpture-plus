@@ -1,7 +1,7 @@
 # 3D Sculpture+
 
 A rotating 3D sculpture under a spotlight, made using WebGL.
-<a>https://hzhang1902.github.io/3d_sculpture_plus/main.html</a>
+<a>https://hzhang1902.github.io/3d-sculpture-plus/main.html</a>
 
 ## How to use
 Open main.html

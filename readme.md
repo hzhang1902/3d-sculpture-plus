@@ -1,7 +1,7 @@
 # WebGL Sculpture
 
 A rotating 3D sculpture under a spotlight, using WebGL.
-<a>https://hzhang1902.github.io/webgl-sculpture/main</a>
+<a>https://hzhang1902.github.io/webgl-sculpture/index</a>
 
 ## Play
 Open main.html

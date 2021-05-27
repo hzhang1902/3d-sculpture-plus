@@ -48,7 +48,7 @@ class GLManager {
     if (!gl) { alert("WebGL isn't available"); }
     this.gl = gl;
 
-    const program = await initShadersFromFiles(gl, "/index.vert", "/index.frag");
+    const program = await initShadersFromFiles(gl, "/shaders/index.vert", "/shaders/index.frag");
     this.program = program
 
     gl.viewport(0, 0, canvas.width, canvas.height);

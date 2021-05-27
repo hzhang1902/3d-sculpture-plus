@@ -7,15 +7,14 @@ let spotStart = 0.99;
 let spotEnd = spotStart - esDifference;
 
 
-window.onload = () => {
+window.onload = async () => {
   const manager = new GLManager()
-  manager.init()
+  await manager.init()
 
   const refresh= () => {
     cancelAnimationFrame(manager.currentAnimationRequest);
     manager.draw()
   }
-
 
   window.onkeyup = (event) => {
     let key = event.key;

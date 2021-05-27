@@ -1,5 +1,5 @@
 import { WebGLUtils } from './lib/webgl-utils.js'
-import { initShaders } from './lib/initShaders.js'
+import { initShaders, initShadersFromFiles } from './lib/initShaders.js'
 import TextureHelper from './textures.js'
 import {
   TileFactory,
@@ -40,7 +40,7 @@ class GLManager {
   reflection = false;
   refraction = false;
 
-  init() {
+  async init() {
     //-----------------inits----------------------
     const canvas = document.getElementById("gl-canvas");
 
@@ -48,7 +48,7 @@ class GLManager {
     if (!gl) { alert("WebGL isn't available"); }
     this.gl = gl;
 
-    const program = initShaders(gl, "vertex-shader", "fragment-shader");
+    const program = await initShadersFromFiles(gl, "/index.vert", "/index.frag");
     this.program = program
 
     gl.viewport(0, 0, canvas.width, canvas.height);

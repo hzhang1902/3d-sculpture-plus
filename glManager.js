@@ -91,10 +91,10 @@ class GLManager {
 
     const stone = new Image();
     stone.crossOrigin = "";
-    stone.src = "http://web.cs.wpi.edu/~jmcuneo/stones.bmp";
+    stone.src = "https://web.cs.wpi.edu/~jmcuneo/stones.bmp";
     const grass = new Image();
     grass.crossOrigin = "";
-    grass.src = "http://web.cs.wpi.edu/~jmcuneo/grass.bmp";
+    grass.src = "https://web.cs.wpi.edu/~jmcuneo/grass.bmp";
     const uPromise = [stone, grass].map(txt => makePromise(txt))
     Promise.all(uPromise)
       .then(() => {
@@ -108,7 +108,7 @@ class GLManager {
     for (let i = 0; i < 6; i++) {
       sides.push(new Image());
     }
-    const host = "http://web.cs.wpi.edu/~jmcuneo/env_map_sides";
+    const host = "https://web.cs.wpi.edu/~jmcuneo/env_map_sides";
     const fileNames = ["nvnegx.bmp", "nvposz.bmp", "nvposx.bmp", "nvnegz.bmp", "nvposy.bmp", "nvnegy.bmp"]
     sides.forEach((side, index) => {
       side.crossOrigin = "";

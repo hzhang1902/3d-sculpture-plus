@@ -31,8 +31,7 @@ varying vec3 refraction;
 uniform int type;
 
 
-void main()
-{
+void main() {
     if (type == 1) {
         // line
 
@@ -130,9 +129,9 @@ void main()
         } 
         // it actually looks better to not have a negative Kd.
         // but considering it's in the video, just leave it as is.
-        //else {
-        //    Kd = 0.0;
-        //}
+        else {
+            Kd = 0.0;
+        }
 
         vec3 lightDir = normalize(lightDirection);
         vec4 ambient = lightAmbient * uColor;
@@ -213,72 +212,8 @@ void main()
 }
 </script>
 
-<script type="text/javascript" src="lib/webgl-utils.js"></script>
-<script type="text/javascript" src="lib/initShaders.js"></script>
-
 <script type="text/javascript" src="lib/MV.js"></script>
-<script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="shapes.js"></script>
-<script type="text/javascript" src="textures.js"></script>
-<script>
-
-//-------------------public variables----------------------
-var mode="gouraud";
-var shadow = true;
-var texture = true;
-var reflection = false;
-var refraction = false;
-
-// this variable controls how big the edge region is.
-const esDifference = 0.001; //recommended value
-const change = 0.001;
-var spotStart = 0.99;
-var spotEnd = spotStart - esDifference;
-
-//------------------- event listeners --------------------------
-  window.onkeyup = (event) => {
-    let key = event.key;
-
-    switch (key) {
-        case 'p':
-            if (spotStart+ change <= 1 + change) {
-                spotStart+= change;
-                spotEnd = spotStart - esDifference;
-            }
-            break;
-        case 'i':
-            if (spotStart- change >= 0) {
-                spotStart-= change;
-                spotEnd = spotStart - esDifference;
-            }
-            break;
-        case 'm':
-            mode="gouraud";
-            cancelAnimationFrame(currentAnimationRequest);
-            draw();
-            break;
-        case 'n':
-            mode="flat";
-            cancelAnimationFrame(currentAnimationRequest);
-            draw();
-            break;
-        case 'a':
-            shadow = !shadow;
-            break;
-        case 'b':
-            texture = !texture;
-            break;
-        case 'c':
-            reflection = !reflection;
-            break;
-        case 'd':
-            refraction = !refraction;
-            break;
-    }
-  };
-
-
-</script>
+<script type="module" src="index.js"></script>
 <body>
 <canvas id="gl-canvas" width="720" height="720">
 Epic fail!

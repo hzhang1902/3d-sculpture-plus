@@ -1,5 +1,5 @@
 import { WebGLUtils } from './lib/webgl-utils.js'
-import { initShaders } from './lib/initShaders'
+import { initShaders } from './lib/initShaders.js'
 import TextureHelper from './textures.js'
 import {
   TileFactory,
